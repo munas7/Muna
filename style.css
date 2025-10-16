@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.stat {
+    display: flex;
+    gap: 5px;
+}
+
+.stat .label {
+    font-weight: bold;
+    color: #555;
+}
+
+.stat .value {
+    color: #667eea;
+    font-weight: bold;
+}
+
+.game-area {
+    display: flex;
+    gap: 20px;
+}
+
+#gameCanvas {
+    border: 3px solid #333;
+    border-radius: 5px;
+    background: #e8f5e9;
+    cursor: crosshair;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+}
+
+.controls h3 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.tower-btn, .action-btn {
+    padding: 12px;
+    border: 2px solid #667eea;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.tower-btn:hover, .action-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.tower-btn.selected {
+    background: #667eea;
+    color: white;
+}
+
+.tower-btn:disabled, .action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tower-btn small {
+    display: block;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.action-btn {
+    background: #4caf50;
+    border-color: #4caf50;
+    color: white;
+    margin-top: 10px;
+}
+
+.action-btn:hover {
+    background: #45a049;
+}
+
+.instructions {
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #667eea;
+}
+
+.instructions h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .game-area {
+        flex-direction: column;
+    }
+    
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+    
+    .controls {
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: auto;
+    }
+}
